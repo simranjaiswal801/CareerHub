@@ -16,6 +16,11 @@ interviews, and skills — all in one organized, beautiful dashboard.
 
 </div>
 
+
+live demo: https://career-hub-seven-iota.vercel.app/
+
+
+
 ---
 
 ## 📌 Table of Contents
