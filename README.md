@@ -86,3 +86,138 @@ Built as a full-stack learning + portfolio project using the MERN stack.
 ---
 
 ## 📁 Folder Structure
+
+careerhub/
+├── backend/
+│ ├── config/ → db.js (MongoDB connection)
+│ ├── controllers/ → business logic for each resource
+│ ├── middleware/ → auth guard, centralized error handling
+│ ├── models/ → Mongoose schemas (User, Application, Interview, Skill)
+│ ├── routes/ → REST API route definitions
+│ └── server.js → app entry point
+│
+└── frontend/
+└── src/
+├── components/ → Navbar, Footer, ProtectedRoute, cards, Loader
+├── pages/ → Home, Login, Register, Dashboard, Applications, Jobs, etc.
+├── context/ → AuthContext (global auth state)
+└── services/ → api.js (configured Axios instance)
+
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+- Node.js (v18+)
+- A free [MongoDB Atlas](https://mongodb.com/atlas) cluster
+
+### 1. Clone the repo
+```bash
+git clone https://github.com/simranjaiswal801/CarrerHub.git
+cd CarrerHub
+```
+
+### 2. Backend setup
+```bash
+cd backend
+npm install
+cp .env.example .env
+# fill in MONGO_URI and JWT_SECRET in .env
+npm run dev
+```
+Backend runs at `http://localhost:5000`
+
+### 3. Frontend setup
+```bash
+cd frontend
+npm install
+cp .env.example .env
+npm run dev
+```
+Frontend runs at `http://localhost:5173`
+
+> ⚠️ Both servers must run **simultaneously** in separate terminals for the app to work.
+
+---
+
+## 🔑 Environment Variables
+
+**`backend/.env`**
+```env
+PORT=5000
+MONGO_URI=your_mongodb_atlas_connection_string
+JWT_SECRET=your_super_secret_jwt_key
+CLIENT_URL=http://localhost:5173
+```
+
+**`frontend/.env`**
+```env
+VITE_API_URL=http://localhost:5000/api
+```
+
+---
+
+## 📡 API Reference
+
+### Auth
+| Method | Endpoint | Access |
+|---|---|---|
+| POST | `/api/auth/register` | Public |
+| POST | `/api/auth/login` | Public |
+| GET | `/api/auth/me` | Private |
+
+### Applications
+| Method | Endpoint | Access |
+|---|---|---|
+| POST | `/api/applications` | Private |
+| GET | `/api/applications` | Private |
+| GET | `/api/applications/stats/summary` | Private |
+| GET | `/api/applications/:id` | Private |
+| PUT | `/api/applications/:id` | Private |
+| DELETE | `/api/applications/:id` | Private |
+
+### Interviews
+| Method | Endpoint | Access |
+|---|---|---|
+| POST / GET | `/api/interviews` | Private |
+| GET / PUT / DELETE | `/api/interviews/:id` | Private |
+
+### Skills
+| Method | Endpoint | Access |
+|---|---|---|
+| POST / GET | `/api/skills` | Private |
+| PUT / DELETE | `/api/skills/:id` | Private |
+
+### Profile
+| Method | Endpoint | Access |
+|---|---|---|
+| GET / PUT | `/api/profile` | Private |
+
+---
+
+## ☁️ Deployment
+
+| Layer | Platform |
+|---|---|
+| Frontend | [Vercel](https://vercel.com) |
+| Backend | [Render](https://render.com) |
+| Database | [MongoDB Atlas](https://mongodb.com/atlas) |
+
+After deploying, set:
+- `CLIENT_URL` on Render → your deployed Vercel URL (for CORS)
+- `VITE_API_URL` on Vercel → your deployed Render URL + `/api`
+
+---
+
+## 📸 Screenshots
+
+> _Add screenshots of your Home, Dashboard, and Applications pages here once deployed._
+
+---
+
+<div align="center">
+
+Built with ❤️ by **Simran Jaiswal**
+
+</div>
