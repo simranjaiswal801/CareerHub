@@ -85,27 +85,6 @@ Built as a full-stack learning + portfolio project using the MERN stack.
 
 ---
 
-## 📁 Folder Structure
-
-careerhub/
-├── backend/
-│ ├── config/ → db.js (MongoDB connection)
-│ ├── controllers/ → business logic for each resource
-│ ├── middleware/ → auth guard, centralized error handling
-│ ├── models/ → Mongoose schemas (User, Application, Interview, Skill)
-│ ├── routes/ → REST API route definitions
-│ └── server.js → app entry point
-│
-└── frontend/
-└── src/
-├── components/ → Navbar, Footer, ProtectedRoute, cards, Loader
-├── pages/ → Home, Login, Register, Dashboard, Applications, Jobs, etc.
-├── context/ → AuthContext (global auth state)
-└── services/ → api.js (configured Axios instance)
-
-
----
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -207,12 +186,6 @@ VITE_API_URL=http://localhost:5000/api
 After deploying, set:
 - `CLIENT_URL` on Render → your deployed Vercel URL (for CORS)
 - `VITE_API_URL` on Vercel → your deployed Render URL + `/api`
-
----
-
-## 📸 Screenshots
-
-> _Add screenshots of your Home, Dashboard, and Applications pages here once deployed._
 
 ---
 
